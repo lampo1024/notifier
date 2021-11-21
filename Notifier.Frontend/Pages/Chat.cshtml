@@ -3,52 +3,68 @@
 @{
     ViewData["Title"] = "聊天室";
 }
-<div class="chatbox-container">
-    <div id="container">
-        <aside>
-            <header>
-                <input type="text" placeholder="search">
-            </header>
-            <ul>
-                <li>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
-                    <div>
-                        <h2>Prénom Nom</h2>
-                        <h3>
-                            <span class="status orange"></span>
-                            offline
-                        </h3>
+@section Styles{
+<link rel="stylesheet" href="~/css/chat.css" asp-append-version="true" />
+}
+<div class="flex-container chatbox-wrap">
+    <div class="flex-item">
+        <div class="chatbox-box">
+            <div class="chat-column cloumn-user-list">
+                <ul>
+                    <li>
+                        <img class="user-avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
+                        <div class="user-info">
+                            <h2>Prénom Nom</h2>
+                            <h3>
+                                <span class="status orange"></span>
+                                offline
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="user-avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                        <div class="user-info">
+                            <h2>Prénom Nom</h2>
+                            <h3>
+                                <span class="status green"></span>
+                                online
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="user-avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                        <div class="user-info">
+                            <h2>Prénom Nom</h2>
+                            <h3>
+                                <span class="status green"></span>
+                                online
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="user-avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                        <div class="user-info">
+                            <h2>Prénom Nom</h2>
+                            <h3>
+                                <span class="status green"></span>
+                                online
+                            </h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-column cloumn-main">
+                <div class="message-box">
+                    <ul class="message-list">
+                    </ul>
+                    <div class="message-input-box input-group">
+                        <input id="newMessage" placeholder="输入消息..." type="text" class="form-control">
+                        <div class="input-group-append">
+                            <a id="btnSend" class="btn btn-primary">发 送</a>
+                        </div>
                     </div>
-                </li>
-                <li>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
-                    <div>
-                        <h2>Prénom Nom</h2>
-                        <h3>
-                            <span class="status green"></span>
-                            online
-                        </h3>
-                    </div>
-                </li>
-            </ul>
-        </aside>
-        <main>
-            <header>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
-                <div>
-                    <h2>正在与Porter聊天</h2>
-                    <h3>共<span class="message-count">0</span>条消息</h3>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">
-            </header>
-            <ul id="messageList">
-            </ul>
-            <div class="input-group mb-3">
-                <input id="newMessage" placeholder="输入消息..." type="text" class="form-control">
-                <div class="input-group-append">
-                    <a id="btnSend" class="btn btn-primary">发 送</a>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </div>

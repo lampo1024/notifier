@@ -67,16 +67,16 @@ function appendMessage(data) {
     console.log("data:", data);
     var html = `<li class="${data.target}">
                 <div class="entete">
-                    <h3>${data.created_as_astring}</h3>
-                    <h2>${data.data.user}</h2>
+                    <h3 class="message-time">${data.created_as_astring}</h3>
+                    <h2 class="message-user-avatar">${data.data.user}</h2>
                     <span class="status blue"></span>
                 </div>
                 <div class="triangle"></div>
-                <div class="message">
+                <div class="message-body">
                     ${data.data.message}
                 </div>
             </li>`;
-    $("#messageList").append(html);
-    $("#messageList").animate({ scrollTop: $("#messageList")[0].scrollHeight }, 500);
-    $(".message-count").text($("#messageList li").length);
+    $(".message-list").append(html);
+    $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
+    $(".message-count").text($(".message-list li").length);
 }

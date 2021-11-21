@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+
 using Notifier.Server.Hubs;
 
 namespace Notifier.Server.Controllers
@@ -16,7 +17,7 @@ namespace Notifier.Server.Controllers
         }
 
         [HttpGet, HttpPost]
-        [Route("api/message/push")]
+        [Route("/api/message/push")]
         public async Task<IActionResult> Push([FromBody] object data)
         {
             await _hubContext.Clients.All.SendAsync("receiveMessage", data);
