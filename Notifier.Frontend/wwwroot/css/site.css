@@ -1,63 +1,68 @@
-*{box-sizing:border-box;margin:0;padding:0;font-family:Nunito,sans-serif}
-body,html{margin:0;padding:0;height:100%}
-body{height:100vh}
-body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-size: 600% 600%; -webkit-animation: AnimationName 22s ease infinite; -moz-animation: AnimationName 22s ease infinite; animation: AnimationName 22s ease infinite;background: linear-gradient(132deg, rgba(38,52,246,1) 0%, rgba(12,2,194,1) 38%, rgba(14,78,194,1) 64%, rgba(90,20,240,1) 100%); }
-@-webkit-keyframes AnimationName{
-0%{background-position:94% 0}
-50%{background-position:7% 100%}
-100%{background-position:94% 0}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Nunito,sans-serif }
+body, html { margin: 0; padding: 0; height: 100% }
+body { height: 100vh }
+body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-size: 600% 600%; -webkit-animation: AnimationName 22s ease infinite; -moz-animation: AnimationName 22s ease infinite; animation: AnimationName 22s ease infinite; background: linear-gradient(132deg, rgba(38,52,246,1) 0%, rgba(12,2,194,1) 38%, rgba(14,78,194,1) 64%, rgba(90,20,240,1) 100%); }
+
+@-webkit-keyframes AnimationName {
+    0% { background-position: 94% 0 }
+    50% { background-position: 7% 100% }
+    100% { background-position: 94% 0 }
 }
-@-moz-keyframes AnimationName{
-0%{background-position:94% 0}
-50%{background-position:7% 100%}
-100%{background-position:94% 0}
+
+@-moz-keyframes AnimationName {
+    0% { background-position: 94% 0 }
+    50% { background-position: 7% 100% }
+    100% { background-position: 94% 0 }
 }
-@keyframes AnimationName{
-0%{background-position:94% 0}
-50%{background-position:7% 100%}
-100%{background-position:94% 0}
+
+@keyframes AnimationName {
+    0% { background-position: 94% 0 }
+    50% { background-position: 7% 100% }
+    100% { background-position: 94% 0 }
 }
-@keyframes gradient{
-0%{background-position:0 50%}
-50%{background-position:100% 50%}
-100%{background-position:0 50%}
+
+@keyframes gradient {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
 }
-.chatbox-container{display:flex;justify-content:center;align-items:center;flex-direction:column}
-#container{width:750px;height:700px;background:#eff3f7;margin:0 auto;font-size:0;border-radius:5px}
-aside{width:260px;height:600px;background-color:#3b3e49;display:inline-block;font-size:14px;vertical-align:top}
-main{width:490px;height:600px;display:inline-block;font-size:14px;vertical-align:top}
-aside header{padding:30px 20px}
-aside input{width:100%;height:50px;line-height:50px;padding:0 50px 0 20px;background-color:#5e616a;border:none;border-radius:3px;color:#fff;background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);background-repeat:no-repeat;background-position:170px;background-size:40px}
-aside input::placeholder{color:#fff}
-aside ul{padding-left:0;margin:0;list-style-type:none;overflow-y:scroll;height:490px}
-aside li{padding:10px 0}
-aside li:hover{background-color:#5e616a}
-h2,h3{margin:0}
-aside li img{border-radius:50%;margin-left:20px;margin-right:8px}
-aside li div{display:inline-block;vertical-align:top;margin-top:12px}
-aside li h2{font-size:14px;color:#fff;font-weight:400;margin-bottom:5px}
-aside li h3{font-size:12px;color:#7e818a;font-weight:400}
-.status{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:7px}
-.green{background-color:#58b666}
-.orange{background-color:#ff725d}
-.blue{background-color:#6fbced;margin-right:0;margin-left:7px}
-main header{height:110px;padding:30px 20px 30px 40px}
-main header>*{display:inline-block;vertical-align:top}
-main header img:first-child{border-radius:50%}
-main header img:last-child{width:24px;margin-top:8px}
-main header div{margin-left:10px;margin-right:145px}
-main header h2{font-size:16px;margin-bottom:5px}
-main header h3{font-size:14px;font-weight:400;color:#7e818a}
-#messageList{padding-left:0;margin:0;list-style-type:none;overflow-y:scroll;height:335px;border-top:2px solid #fff;border-bottom:2px solid #fff}
-#messageList h2,#messageList h3{display:inline-block;font-size:13px;font-weight:400}
-#messageList h3{color:#bbb}
-#messageList .entete{margin-bottom:5px}
-#messageList .message{padding:10px 20px;color:#fff;line-height:25px;max-width:90%;display:inline-block;text-align:left;border-radius:5px}
-#messageList .me{text-align:right}
-#messageList .you .message{background-color:#58b666}
-#messageList .me .message{background-color:#6fbced}
-#messageList .triangle{width:0;height:0;border-style:solid;border-width:0 10px 10px 10px}
-#messageList .you .triangle{border-color:transparent transparent #58b666 transparent;margin-left:15px}
-#messageList .me .triangle{border-color:transparent transparent #6fbced transparent;margin-left:375px}
-#newMessage{resize:none;border:none;border-radius:3px;}
-#btnSend{text-decoration:none;text-transform:uppercase;font-weight:700;color:#6fbced;vertical-align:top}
+
+.chatbox-container { display: flex; justify-content: center; align-items: center; flex-direction: column }
+#container { width: 750px; height: 700px; background: #eff3f7; margin: 0 auto; font-size: 0; border-radius: 5px }
+aside { width: 260px; height: 600px; background-color: #3b3e49; display: inline-block; font-size: 14px; vertical-align: top }
+main { width: 490px; height: 600px; display: inline-block; font-size: 14px; vertical-align: top }
+aside header { padding: 30px 20px }
+aside input { width: 100%; height: 50px; line-height: 50px; padding: 0 50px 0 20px; background-color: #5e616a; border: none; border-radius: 3px; color: #fff; background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png); background-repeat: no-repeat; background-position: 170px; background-size: 40px }
+    aside input::placeholder { color: #fff }
+aside ul { padding-left: 0; margin: 0; list-style-type: none; overflow-y: scroll; height: 490px }
+aside li { padding: 10px 0 }
+    aside li:hover { background-color: #5e616a }
+h2, h3 { margin: 0 }
+aside li img { border-radius: 50%; margin-left: 20px; margin-right: 8px }
+aside li div { display: inline-block; vertical-align: top; margin-top: 12px }
+aside li h2 { font-size: 14px; color: #fff; font-weight: 400; margin-bottom: 5px }
+aside li h3 { font-size: 12px; color: #7e818a; font-weight: 400 }
+.status { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 7px }
+.green { background-color: #58b666 }
+.orange { background-color: #ff725d }
+.blue { background-color: #6fbced; margin-right: 0; margin-left: 7px }
+main header { height: 110px; padding: 30px 20px 30px 40px }
+    main header > * { display: inline-block; vertical-align: top }
+    main header img:first-child { border-radius: 50% }
+    main header img:last-child { width: 24px; margin-top: 8px }
+    main header div { margin-left: 10px; margin-right: 145px }
+    main header h2 { font-size: 16px; margin-bottom: 5px }
+    main header h3 { font-size: 14px; font-weight: 400; color: #7e818a }
+#messageList { padding-left: 0; margin: 0; list-style-type: none; overflow-y: scroll; height: 335px; border-top: 2px solid #fff; border-bottom: 2px solid #fff }
+    #messageList h2, #messageList h3 { display: inline-block; font-size: 13px; font-weight: 400 }
+    #messageList h3 { color: #bbb }
+    #messageList .entete { margin-bottom: 5px }
+    #messageList .message { padding: 10px 20px; color: #fff; line-height: 25px; max-width: 90%; display: inline-block; text-align: left; border-radius: 5px }
+    #messageList .me { text-align: right }
+    #messageList .you .message { background-color: #58b666 }
+    #messageList .me .message { background-color: #6fbced }
+    #messageList .triangle { width: 0; height: 0; border-style: solid; border-width: 0 10px 10px 10px }
+    #messageList .you .triangle { border-color: transparent transparent #58b666 transparent; margin-left: 15px }
+    #messageList .me .triangle { border-color: transparent transparent #6fbced transparent; margin-left: 375px }
+/*#newMessage { resize: none; border: none; border-radius: 3px; }
+#btnSend { text-decoration: none; text-transform: uppercase; font-weight: 700; color: #6fbced; vertical-align: top }*/
