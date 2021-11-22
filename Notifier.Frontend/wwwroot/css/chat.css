@@ -1,26 +1,31 @@
-﻿.flex-container { height: 100%; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; }
-.cell { width: auto; }
-.flex-item { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 0; min-width: 800px; min-height: 600px; margin: 0; line-height: 20px; color: white; box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; display: flex; }
-
-.chatbox-box { display: flex; align-items: stretch; width: 100%; }
-.chatbox-wrap { }
-    .chatbox-wrap h1 { font-size: 22px; padding: 10px 10px 0; }
-.chat-column { }
-.cloumn-main { flex-grow: 5; }
-.cloumn-user-list { width: 220px; }
-.user-avatar { border-radius: 50%; }
-.cloumn-user-list ul { list-style: none; margin: 0; padding: 0; }
-.cloumn-user-list li { list-style: none; margin: 0; padding: 10px; border-bottom: 1px solid rgba(240, 46, 170, 0.2); box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px; border-radius: 3px; }
-    .cloumn-user-list li:hover { background-color: #842789; cursor: pointer; }
-    .cloumn-user-list li h2 { font-size: 13px; }
-.user-info { display: inline-block; vertical-align: top; margin-top: 12px; }
-    .user-info h3 { font-size: 12px; color: #bd6ac2 }
-.message-box { display: flex; flex-direction: column; align-items: stretch; height: 100%; padding: 10px; }
-.message-list { list-style: none; margin: 0; padding: 0px; flex: 1; }
-.message-time, .message-user-avatar { color: #bd6ac2; font-size: 13px; display: inline-block; }
-.message-user-avatar { }
-.message-input-box { margin-bottom: 0; }
-.message-list li { margin-top: 10px; padding: 10px; }
-    .message-list li .message-body { display: inline-block; background-color: #935097; border-radius: 5px; font-size: 14px; margin-top: 10px; padding: 10px; }
-    .message-list li.me { text-align: right; }
-    .message-list li:first-child { margin-top: 0px; }
+﻿.flex-container{height:100%;padding:0;margin:0;display:flex;align-items:center;justify-content:center}
+.cell{width:auto}
+.flex-item{border:1px solid rgb(47, 107, 218);background:rgba(3, 29, 112, 0.5);border-radius:10px;padding:0;min-width:800px;min-height:600px;margin:0;line-height:20px;color:#fff;box-shadow:rgba(46, 107, 240, 0.4) 5px 5px,rgba(46, 107, 240, 0.3) 10px 10px,rgba(46, 107, 240,.2) 15px 15px,rgba(30, 114, 211, 0.1) 20px 20px,rgba(46, 107, 240,.05) 25px 25px;display:flex;max-width: 600px;}
+.chatbox-box{display:flex;align-items:stretch;width:100%}
+.chatbox-wrap h1{font-size:22px;padding:10px 10px 0}
+.column-main{flex-grow:5}
+.column-user-list{width:220px;min-width: 200px;}
+.column-user-list ul{list-style:none;margin:0;padding:0}
+.column-user-list li{list-style:none;margin:0;padding:10px;box-shadow:rgba(33,35,38,.1) 0 10px 10px -10px;border-radius:3px}
+.column-user-list li:hover{background-color:#234bb8;cursor:pointer}
+.column-user-list li h2{font-size:13px}
+.user-avatar{border-radius:50%}
+.user-info{display:inline-block;vertical-align:top;margin-top:12px}
+.user-info h3{font-size:12px;color:#6a6bc2}
+.message-box{display:flex;flex-direction:column;align-items:stretch;height:100%;padding:10px}
+.message-list{list-style:none;margin:0;padding:0;flex:1}
+.message-time,.message-user-avatar{color:#6a6bc2;font-size:13px;display:inline-block}
+.message-input-box{margin-bottom:0}
+.message-list li{margin-top:10px;padding:0px}
+.message-list li .message-body{ color: #c3d2fa; display:inline-block;background-color:rgba(255,255,255,.1);border-radius:5px;font-size:14px;margin-top:10px;padding:15px 15px;min-width:60px}
+.message-body::after{content:"";position:absolute;margin:-1.5em 1.87em;width:0;height:0;border-color: transparent transparent #58b666 transparent;border-width: 0 10px 10px 10px;}
+.message-list li.me{text-align:right}
+.message-list li:first-child{margin-top:0}
+.message-item{display:flex;}
+.message-item.me{flex-direction: row-reverse;}
+.user-small-avatar{border-radius: 50%; width: 36px; height: 36px;margin: 0; margin-right: 5px; }
+.message-item.me .user-small-avatar{margin-left: 5px;}
+.btn-send-chat{font-size: 15px;}
+.chat-input-message{font-size: 14px; color: #6a6bc2; background-color: #234bb8;}
+.chat-input-message:active,.chat-input-message:focus{background-color: #3d63cc; color: #c3d2fa;}
+.chat-input-message::placeholder{color:rgb(80, 101, 194)}

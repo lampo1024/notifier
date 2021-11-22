@@ -1,54 +1,93 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "消息面板";
+    ViewData["Title"] = "聊天室";
 }
-<div class="chatbox-container">
-    <div id="container">
-        <aside>
-            <header>
-                <input type="text" placeholder="search">
-            </header>
-            <ul>
-                <li>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
-                    <div>
-                        <h2>Prénom Nom</h2>
-                        <h3>
-                            <span class="status orange"></span>
-                            offline
-                        </h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
-                    <div>
-                        <h2>Prénom Nom</h2>
-                        <h3>
-                            <span class="status green"></span>
-                            online
-                        </h3>
-                    </div>
-                </li>
-            </ul>
-        </aside>
-        <main>
-            <header>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
+@section Styles{
+<link rel="stylesheet" href="~/css/chat.css" asp-append-version="true" />
+}
+<div class="flex-container chatbox-wrap">
+    <div class="flex-item">
+        <div class="chatbox-box">
+            <div class="chat-column column-user-list">
                 <div>
-                    <h2>正在与Porter聊天</h2>
-                    <h3>共<span class="message-count">0</span>条消息</h3>
+                    <h1>Notifier</h1>
+                    <ul>
+                        <li>
+                            <img class="user-avatar"
+                                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
+                            <div class="user-info">
+                                <h2>Prénom Nom</h2>
+                                <h3>
+                                    <span class="status orange"></span>
+                                    离线
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="user-avatar"
+                                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                            <div class="user-info">
+                                <h2>Prénom Nom</h2>
+                                <h3>
+                                    <span class="status green"></span>
+                                    在线
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="user-avatar"
+                                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                            <div class="user-info">
+                                <h2>Prénom Nom</h2>
+                                <h3>
+                                    <span class="status green"></span>
+                                    在线
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="user-avatar"
+                                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                            <div class="user-info">
+                                <h2>Prénom Nom</h2>
+                                <h3>
+                                    <span class="status green"></span>
+                                    在线
+                                </h3>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">
-            </header>
-            <ul class="message-list" id="messageList">
-            </ul>
-            <div class="input-group mb-3">
-                <input id="newMessage" placeholder="输入消息..." type="text" class="form-control">
-                <div class="input-group-append">
-                    <a id="btnSend" class="btn btn-primary">发 送</a>
+
+            </div>
+            <div class="chat-column column-main">
+                <div class="message-box">
+                    <ul class="message-list">
+                        <li class="message-item you">
+                            <div class="message-user-avatar">
+                                <img class="user-small-avatar"
+                                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                            </div>
+                            <div class="message-item-box">
+                                <div class="message-info">
+                                    <h2 class="message-user-avatar">系统</h2>
+                                    <h3 class="message-time">2021-11-22 11:13:26.222</h3>                                
+                                </div>
+                                <div class="message-body">
+                                    已成功连接到消息服务器
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="message-input-box input-group">
+                        <input id="newMessage" placeholder="输入消息..." type="text" class="form-control chat-input-message">
+                        <div class="input-group-append">
+                            <a id="btnSend" class="btn btn-primary btn-send-chat">发 送</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </div>

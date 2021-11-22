@@ -65,17 +65,20 @@ function systemMessage(message) {
 
 function appendMessage(data) {
     console.log("data:", data);
-    var html = `<li class="${data.target}">
-                <div class="entete">
-                    <h3 class="message-time">${data.created_as_astring}</h3>
-                    <h2 class="message-user-avatar">${data.data.user}</h2>
-                    <span class="status blue"></span>
-                </div>
-                <div class="triangle"></div>
-                <div class="message-body">
-                    ${data.data.message}
-                </div>
-            </li>`;
+    var html = `<li class="message-item ${data.target}">
+    <div class="message-user-avatar">
+        <img class="user-small-avatar"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+    </div>
+    <div class="message-item-box">
+        <div class="message-info">
+            <h3 class="message-time">${data.created_as_astring}</h3>                                
+        </div>
+        <div class="message-body">
+            ${data.data.message}
+        </div>
+    </div>
+</li>`;
     $(".message-list").append(html);
     $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
     $(".message-count").text($(".message-list li").length);
