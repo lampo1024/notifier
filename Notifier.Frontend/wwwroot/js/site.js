@@ -41,6 +41,9 @@ $(function () {
             $("#btnSend").trigger("click");
         }
     });
+    $(".column-user-list").on("click",".user-item",function(){
+        console.log("switch user:",123);
+    });
 });
 
 

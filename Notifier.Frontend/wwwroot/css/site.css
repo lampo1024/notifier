@@ -1,7 +1,7 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:Nunito,sans-serif}
 body,html{margin:0;padding:0;height:100%}
 body{height:100vh}
-body{background:linear-gradient(133deg,#1563d9,#155f7d,#5d75ff);background-size:600% 600%}
+body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-size: 600% 600%; -webkit-animation: AnimationName 22s ease infinite; -moz-animation: AnimationName 22s ease infinite; animation: AnimationName 22s ease infinite;background: linear-gradient(132deg, rgba(38,52,246,1) 0%, rgba(12,2,194,1) 38%, rgba(14,78,194,1) 64%, rgba(90,20,240,1) 100%); }
 @-webkit-keyframes AnimationName{
 0%{background-position:94% 0}
 50%{background-position:7% 100%}
