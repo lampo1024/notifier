@@ -4,11 +4,7 @@ namespace Notifier.Server.Services
 {
     public class OnlineUserService
     {
-        public OnlineUserService()
-        {
-            OnlineUserList = new List<ChatUser>();
-        }
-        public static List<ChatUser>? OnlineUserList { get; set; }
+        public static List<ChatUser> OnlineUserList { get; set; } = new List<ChatUser>();
         public void AddUser(string connectionId, string name)
         {
             var user = new ChatUser

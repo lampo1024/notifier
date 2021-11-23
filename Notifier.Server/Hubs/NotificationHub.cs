@@ -37,8 +37,9 @@ namespace Notifier.Server.Hubs
             await base.OnConnectedAsync();
         }
 
-        public override async Task OnDisconnectedAsync(Exception ex)
+        public override async Task OnDisconnectedAsync(Exception? ex)
         {
+            //ArgumentNullException.ThrowIfNull(ex);
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, "rector");
             await base.OnDisconnectedAsync(ex);
         }
@@ -57,7 +58,7 @@ namespace Notifier.Server.Hubs
         /// </summary>
         public string? Group { get; set; }
         public string? Type { get; set; }
-        public string Target { get; set; }
+        public string? Target { get; set; }
         public dynamic? Data { get; set; }
 
         public void SetTargetToYou()
