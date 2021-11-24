@@ -20,7 +20,11 @@ namespace Notifier.Server.Controllers
         [Route("/api/message/push")]
         public async Task<IActionResult> Push([FromBody] object data)
         {
-            await _hubContext.Clients.All.SendAsync("receiveMessage", data);
+            var model = new MessageRequestModel
+            {
+                Data = data
+            };
+            await _hubContext.Clients.All.SendAsync("receiveMessage", model);
             return Ok(new { success = true, message = "消息接收成功" });
         }
     }

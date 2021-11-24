@@ -32,5 +32,5 @@ scripts.forEach(function (url) {
     promises.push(loadScript(url));
 });
 Promise.all(promises).then(() => {
-    importScript("http://localhost:5126/js/site.js");
+    importScript("http://localhost:5126/js/notifier.js");
 });

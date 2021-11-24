@@ -1,6 +1,41 @@
 ﻿@page
 @model Notifier.Frontend.Pages.MessageModel
 @{
+    Layout = "~/Pages/Shared/_LayoutNotifier.cshtml";
+    ViewData["Title"] = "消息列表";
 }
-<ul class="message-list">
-</ul>
+@section Styles{
+<link rel="stylesheet" href="~/css/message.css" asp-append-version="true" />
+}
+<div class="flex-container chatbox-wrap">
+    <div class="flex-item">
+        <div class="chatbox-box">
+            <div class="chat-column column-main">
+                <div class="message-box">
+                    <h1>消息列表</h1>
+                    <div class="message-list-box">
+                        <ul class="message-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+<script type="text/javascript">
+       window.NTF.onReceived = function(data) {
+        // console.log("data:", data);
+        var html = `<li class="message-item">
+                        <div class="message-item-box">
+                            <div class="message-body">
+                                <span class="message-date ${data.type}">[${data.created_as_astring}]</span>${data.data.message},<b>${window.NTF.connectionId}</b>
+                            </div>
+                        </div>
+                    </li>`;
+        $(".message-list").append(html);
+        $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
+        $(".message-count").text($(".message-list li").length);
+    }
+</script>
+}

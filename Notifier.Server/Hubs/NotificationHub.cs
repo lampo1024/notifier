@@ -33,6 +33,8 @@ namespace Notifier.Server.Hubs
 
         public override async Task OnConnectedAsync()
         {
+            var uid = Context.GetHttpContext().Request.Query["uid"];
+            Console.WriteLine($"uid:[{uid}]");
             await Groups.AddToGroupAsync(Context.ConnectionId, "rector");
             await base.OnConnectedAsync();
         }
@@ -47,17 +49,13 @@ namespace Notifier.Server.Hubs
 
     public record MessageRequestModel
     {
-        public MessageRequestModel()
-        {
-            Created = DateTime.Now;
-        }
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
         public string CreatedAsAstring => Created.ToString("yyyy-MM-dd HH:mm:ss.fff");
         /// <summary>
         /// 分组
         /// </summary>
         public string? Group { get; set; }
-        public string? Type { get; set; }
+        public string? Type { get; set; } = "info";
         public string? Target { get; set; }
         public dynamic? Data { get; set; }
 
