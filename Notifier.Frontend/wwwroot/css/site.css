@@ -34,3 +34,12 @@ body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-s
 .chatbox-box { display: flex; align-items: stretch; width: 100% }
 .chatbox-wrap h1 { font-size: 18px; font-weight: 600; padding: 0; color: rgb(78, 134, 238) }
 .column-main { flex-grow: 5 }
+
+.login-container .flex-item { min-height: 320px; min-width: 360px; max-height: 400px; max-width: 300px; }
+.login-header { margin: 5px auto 25px; }
+    .login-header h1 { color: #3d91ff; }
+.login-box { padding: 15px; }
+.login-form-box .form-group { margin-bottom: 15px; }
+    .login-form-box .form-group .form-control { background-color: #061f86; border-color: #082bb9; color: #6381f8; }
+.login-user-avatar { font-size: 48px; color: #6da0fd; }
+.login-actions{margin-top: 30px;}

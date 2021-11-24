@@ -54,7 +54,7 @@
         $(".message-count").text($(".message-list li").length);
     }
 };
-notifier.init("http://localhost:5125/hub/notifier?uid=10010");
+notifier.init("http://localhost:5125/hub/notifier?uid=" + window.NTF.uid);
 
 $(function () {
     $("#btnSend").click(async function () {

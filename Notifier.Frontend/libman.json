@@ -5,6 +5,10 @@
     {
       "library": "microsoft-signalr@6.0.0",
       "destination": "wwwroot/lib/microsoft-signalr/"
+    },
+    {
+      "library": "font-awesome@5.15.4",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }

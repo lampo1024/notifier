@@ -24,7 +24,8 @@
 </div>
 @section Scripts{
 <script type="text/javascript">
-       window.NTF.onReceived = function(data) {
+    window.NTF.uid = "@(HttpContext.User.Identity.Name)";
+    window.NTF.onReceived = function(data) {
         // console.log("data:", data);
         var html = `<li class="message-item">
                         <div class="message-item-box">
