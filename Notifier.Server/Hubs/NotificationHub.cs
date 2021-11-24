@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+
 using Newtonsoft.Json;
 
 namespace Notifier.Server.Hubs
@@ -30,6 +31,11 @@ namespace Notifier.Server.Hubs
         public override async Task OnConnectedAsync()
         {
             var uid = Context.GetHttpContext().Request.Query["uid"];
+            if (string.IsNullOrEmpty(uid))
+            {
+                uid = "public";
+            }
+
             Console.WriteLine($"用户[{uid}]连接[{Context.ConnectionId}]成功");
             await Groups.AddToGroupAsync(Context.ConnectionId, uid);
             await base.OnConnectedAsync();
