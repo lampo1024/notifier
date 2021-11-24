@@ -17,7 +17,7 @@
     start: async function () {
         try {
             await notifier.connection.start();
-            await sendSystemMessage("已成功连接到消息服务器[" + notifier.connection.connectionId + "]");
+            await sendSystemMessage("已成功连接到消息服务器");
             window.NTF.connectionId = notifier.connection.connectionId;
         } catch (err) {
             console.error(err);
@@ -86,7 +86,7 @@ function uuidv4() {
     );
 }
 async function sendChatMessage(user, message) {
-    await notifier.connection.invoke("SendMessage", { group: "chat", data: { "user": user, "message": message + "[" + window.NTF.connectionId + "]" } });
+    await notifier.connection.invoke("SendMessage", { group: "chat", data: { "user": user, "message": message } });
 }
 
 async function sendSystemMessage(message, type) {

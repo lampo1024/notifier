@@ -1,9 +1,5 @@
-﻿.flex-container { height: 100%; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center }
-.cell { width: auto }
-.flex-item { border: 1px solid rgb(47, 107, 218); background: rgba(3, 29, 112, 0.5); border-radius: 10px; padding: 0; min-width: 800px; min-height: 600px; margin: 0; line-height: 20px; color: #fff; box-shadow: rgba(46, 107, 240, 0.4) 5px 5px,rgba(46, 107, 240, 0.3) 10px 10px,rgba(46, 107, 240,.2) 15px 15px,rgba(30, 114, 211, 0.1) 20px 20px,rgba(46, 107, 240,.05) 25px 25px; display: flex; max-width: 600px; }
-.chatbox-box { display: flex; align-items: stretch; width: 100% }
-.chatbox-wrap h1 { font-size: 22px; padding: 10px 10px 0 }
-.column-main { flex-grow: 5 }
+﻿.chatbox-wrap h1 { font-size: 22px; padding: 10px 10px 0 }
+
 .column-user-list { width: 220px; min-width: 200px; }
     .column-user-list ul { list-style: none; margin: 0; padding: 0 }
     .column-user-list li { list-style: none; margin: 0; padding: 10px; box-shadow: rgba(33,35,38,.1) 0 10px 10px -10px; border-radius: 3px }
