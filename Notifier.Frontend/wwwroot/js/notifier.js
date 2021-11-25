@@ -15,7 +15,6 @@
         });
 
         this.connection.on("refreshUserList", (data) => {
-            //console.log("refresh:", data);
             this.renderUserList(data);
         });
     },
@@ -25,12 +24,10 @@
             await sendSystemMessage("已成功连接到消息服务器");
             window.NTF.connectionId = notifier.connection.connectionId;
         } catch (err) {
-            console.error(err);
             setTimeout(this.start, 5000);
         }
     },
     renderMessage: function (data) {
-        console.log("rendering...", window.NTF);
         if (window.NTF && window.NTF.onReceived) {
             window.NTF.onReceived(data);
         }
@@ -61,7 +58,6 @@
         if (!data) {
             return;
         }
-        console.log(data);
         $(".chat-user-list").html("");
         for (var i = 0; i < data.length; i++) {
             var user = data[i];

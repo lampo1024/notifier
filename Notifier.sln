@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notifier.Core", "Notifier.Core\Notifier.Core.csproj", "{AF74E58D-3426-449E-A796-1EE8F1745A95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{72F05FF7-9DBE-427B-9E89-BFD56B0ED1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F05FF7-9DBE-427B-9E89-BFD56B0ED1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F05FF7-9DBE-427B-9E89-BFD56B0ED1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF74E58D-3426-449E-A796-1EE8F1745A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF74E58D-3426-449E-A796-1EE8F1745A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF74E58D-3426-449E-A796-1EE8F1745A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF74E58D-3426-449E-A796-1EE8F1745A95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
