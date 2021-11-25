@@ -1,18 +1,22 @@
 {
-  "version": "1.0",
-  "defaultProvider": "cdnjs",
-  "libraries": [
-    {
-      "library": "microsoft-signalr@6.0.0",
-      "destination": "wwwroot/lib/microsoft-signalr/"
-    },
-    {
-      "library": "font-awesome@5.15.4",
-      "destination": "wwwroot/lib/font-awesome/"
-    },
-    {
-      "library": "toastr.js@2.1.4",
-      "destination": "wwwroot/lib/toastr.js/"
-    }
-  ]
+    "version": "1.0",
+    "defaultProvider": "cdnjs",
+    "libraries": [
+        {
+            "library": "microsoft-signalr@6.0.0",
+            "destination": "wwwroot/lib/microsoft-signalr/"
+        },
+        {
+            "library": "font-awesome@5.15.4",
+            "destination": "wwwroot/lib/font-awesome/"
+        },
+        {
+            "library": "toastr.js@2.1.4",
+            "destination": "wwwroot/lib/toastr.js/"
+        },
+        {
+            "library": "jquery.nicescroll@3.7.6",
+            "destination": "wwwroot/lib/jquery.nicescroll/"
+        }
+    ]
 }

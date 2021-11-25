@@ -8,13 +8,13 @@
 .user-avatar { border-radius: 50% }
 .user-info { display: inline-block; vertical-align: top; margin-top: 12px }
     .user-info h3 { font-size: 12px; color: #6a6bc2 }
-.message-box { display: flex; flex-direction: column; align-items: stretch; height: 100%; padding: 10px; }
-.message-list-box { flex: 1; }
-.message-list { list-style: none; margin: 0 0 10px; padding: 0; overflow-y: auto; max-height: 540px; }
+.message-box { display: flex; flex-direction: column; align-items: stretch; height: 100%; padding: 5px 0; }
+.message-list-box { flex: 1; border-radius: 5px; }
+.message-list { list-style: none; margin: 0 0; padding: 0; overflow-y: auto; height: 545px; }
 .message-time, .message-user-avatar { color: #6a6bc2; font-size: 13px; display: inline-block }
 .message-input-box { margin-bottom: 0 }
 .message-list li { margin-top: 10px; padding: 0px }
-    .message-list li .message-body { color: #c3d2fa; display: inline-block; background-color: rgba(255,255,255,.1); border-radius: 5px; font-size: 14px; margin-top: 10px; padding: 10px 15px; }
+    .message-list li .message-body { color: #c3d2fa; display: inline-block; background-color: rgba(255,255,255,.1); border-radius: 5px; font-size: 14px; margin-top: 0; margin-bottom: 10px; padding: 10px 15px; }
 .message-body::after { content: ""; position: absolute; margin: -1.5em 1.87em; width: 0; height: 0; border-color: transparent transparent #58b666 transparent; border-width: 0 10px 10px 10px; }
 .message-list li.me { text-align: right }
 .message-list li:first-child { margin-top: 0 }
