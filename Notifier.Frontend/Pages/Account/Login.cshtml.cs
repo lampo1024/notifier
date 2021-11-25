@@ -9,21 +9,24 @@ namespace Notifier.Frontend.Pages.Account
 {
     public class LoginModel : PageModel
     {
-        [BindProperty]
-        public LoginViewModel? LoginViewModel { get; set; }
         public void OnGet()
         {
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(LoginViewModel loginViewModel)
         {
+            if (loginViewModel.Username == null)
+            {
+                ArgumentNullException.ThrowIfNull(nameof(loginViewModel.Username));
+                return Page();
+            }
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, LoginViewModel.Username)
+                new Claim(ClaimTypes.Name, loginViewModel.Username)
             };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-            return RedirectToPage("/message");
+            return RedirectToPage("/chat");
         }
     }
 }

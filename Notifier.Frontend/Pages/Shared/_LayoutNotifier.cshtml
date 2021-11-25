@@ -9,11 +9,16 @@
     @await RenderSectionAsync("Styles",required:false)
 </head>
 <body>
-    @RenderBody()
+    <div class="notifier-container">
+        @RenderBody()
+        <footer>
+            <div class="notifier-footer">
+                <a href="~/account/logout">注销</a>
+            </div>
+        </footer>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    @* <script src="~/lib/microsoft-signalr/signalr.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>*@
     <script async src="http://localhost:5126/js/chat.js"></script>
     <script type="text/javascript">
         window.NTF = window.NTF || { }

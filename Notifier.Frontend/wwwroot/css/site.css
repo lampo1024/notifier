@@ -2,6 +2,7 @@
 body, html { margin: 0; padding: 0; height: 100% }
 body { height: 100vh }
 body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-size: 600% 600%; -webkit-animation: AnimationName 22s ease infinite; -moz-animation: AnimationName 22s ease infinite; animation: AnimationName 22s ease infinite; background: linear-gradient(132deg, rgba(38,52,246,1) 0%, rgba(12,2,194,1) 38%, rgba(14,78,194,1) 64%, rgba(90,20,240,1) 100%); }
+a { text-decoration: none; }
 
 @-webkit-keyframes AnimationName {
     0% { background-position: 94% 0 }
@@ -27,6 +28,10 @@ body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-s
     100% { background-position: 0 50% }
 }
 
+.notifier-container { display: flex; flex-direction: column; align-items: stretch; height: 100%; }
+    .notifier-container footer { position: fixed; left: 0; bottom: 5px; width: 100%; display: flex; justify-content: center; }
+.notifier-footer { width: 800px; text-align: center; }
+.notifier-logo { font-size: 20px; font-weight: 600; text-decoration: none; }
 .chatbox-container { display: flex; justify-content: center; align-items: center; flex-direction: column }
 .flex-container { height: 100%; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center }
 .cell { width: auto }
@@ -42,4 +47,4 @@ body { background: linear-gradient(135deg,#1115e4,#1f4ece,#1220e2); background-s
 .login-form-box .form-group { margin-bottom: 15px; }
     .login-form-box .form-group .form-control { background-color: #061f86; border-color: #082bb9; color: #6381f8; }
 .login-user-avatar { font-size: 48px; color: #6da0fd; }
-.login-actions{margin-top: 30px;}
+.login-actions { margin-top: 30px; }

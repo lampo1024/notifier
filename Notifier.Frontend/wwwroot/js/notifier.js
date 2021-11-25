@@ -13,6 +13,11 @@
         this.connection.on("receiveMessage", (data) => {
             this.renderMessage(data);
         });
+
+        this.connection.on("refreshUserList", (data) => {
+            //console.log("refresh:", data);
+            this.renderUserList(data);
+        });
     },
     start: async function () {
         try {
@@ -34,7 +39,6 @@
         }
     },
     appendMessage: function (data) {
-        // console.log("data:", data);
         var html = `<li class="message-item ${data.target}">
                         <div class="message-user-avatar">
                             <img class="user-small-avatar"
@@ -52,6 +56,29 @@
         $(".message-list").append(html);
         $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
         $(".message-count").text($(".message-list li").length);
+    },
+    renderUserList: function (data) {
+        if (!data) {
+            return;
+        }
+        console.log(data);
+        $(".chat-user-list").html("");
+        for (var i = 0; i < data.length; i++) {
+            var user = data[i];
+            var me = (user.connection_id == notifier.connection.connectionId ? "me" : "");
+            var html = `<li class="user-item ${me}">
+                            <img class="user-avatar"
+                                 src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg" alt="">
+                            <div class="user-info">
+                                <h2>${user.name}</h2>
+                                <h3>
+                                    <span class="status green"></span>
+                                    在线
+                                </h3>
+                            </div>
+                    </li>`;
+            $(".chat-user-list").append(html);
+        }
     }
 };
 notifier.init("http://localhost:5125/hub/notifier?uid=" + window.NTF.uid);
