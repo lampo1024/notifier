@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-
+using Notifier.Server.Dto.RequestModels;
 using Notifier.Server.Hubs;
 
 namespace Notifier.Server.Controllers
@@ -25,6 +25,19 @@ namespace Notifier.Server.Controllers
                 Data = data
             };
             await _hubContext.Clients.All.SendAsync("receiveMessage", model);
+            return Ok(new { success = true, message = "消息接收成功" });
+        }
+
+        [HttpPost]
+        [Route("/api/message/custom")]
+        public async Task<IActionResult> Custom(CustomRequestModel request)
+        {
+            ArgumentNullException.ThrowIfNull(request.EventName, nameof(request.EventName));
+            var model = new MessageRequestModel
+            {
+                Data = request.Data
+            };
+            await _hubContext.Clients.All.SendAsync(request.EventName, model);
             return Ok(new { success = true, message = "消息接收成功" });
         }
     }

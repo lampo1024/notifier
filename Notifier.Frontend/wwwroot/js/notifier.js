@@ -17,6 +17,17 @@
         this.connection.on("refreshUserList", (data) => {
             this.renderUserList(data);
         });
+        let target = this;
+        if (window.NTF.events && window.NTF.events.length > 0) {
+            window.NTF.events.forEach(function (item, index) {
+                console.log("监听事件[" + item.eventName + "]...");
+                if (item.callback && typeof (item.callback) === "function") {
+                    target.connection.on(item.eventName, (data) => {
+                        item.callback(data);
+                    });
+                }
+            });
+        }
     },
     start: async function () {
         try {

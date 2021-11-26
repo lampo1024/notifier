@@ -29,6 +29,18 @@ namespace Notifier.Server.Hubs
             }
         }
 
+        //public async Task Notify(MessageRequestModel model)
+        //{
+        //    Console.WriteLine($"接收到消息[onNotify]：{JsonConvert.SerializeObject(model)}");
+        //    await Clients.All.SendAsync("onNotify", model);
+        //}
+
+        //public async Task Tooltip(MessageRequestModel model)
+        //{
+        //    Console.WriteLine($"接收到消息[onTooltip]：{JsonConvert.SerializeObject(model)}");
+        //    await Clients.All.SendAsync("onTooltip", model);
+        //}
+
         public override async Task OnConnectedAsync()
         {
             var uid = Context.GetHttpContext().Request.Query["uid"];

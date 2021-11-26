@@ -25,6 +25,35 @@
 @section Scripts{
 <script type="text/javascript">
     window.NTF.uid = "@(HttpContext.User.Identity.Name)";
+    window.NTF.events = [{
+        eventName:"onNotify",
+        callback:function(data){
+            var html = `<li class="message-item">
+                        <div class="message-item-box">
+                            <div class="message-body">
+                                <span style="color:#f00;" class="message-date ${data.type}">[${data.created_as_astring}]</span>${data.data.message},<b>${window.NTF.connectionId}</b>
+                            </div>
+                        </div>
+                    </li>`;
+        $(".message-list").append(html);
+        $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
+        $(".message-count").text($(".message-list li").length);
+        }
+    },{
+        eventName:"onTooltip",
+        callback:function(data){
+            var html = `<li class="message-item">
+                        <div class="message-item-box">
+                            <div class="message-body">
+                                <span style="color:#eee;" class="message-date ${data.type}">[${data.created_as_astring}]</span>${data.data.message},<b>${window.NTF.connectionId}</b>
+                            </div>
+                        </div>
+                    </li>`;
+        $(".message-list").append(html);
+        $(".message-list").animate({ scrollTop: $(".message-list")[0].scrollHeight }, 500);
+        $(".message-count").text($(".message-list li").length);
+        }
+    }];
     window.NTF.onReceived = function(data) {
         // console.log("data:", data);
         var html = `<li class="message-item">
