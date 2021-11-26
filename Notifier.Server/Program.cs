@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json.Serialization;
 using Notifier.Server.Hubs;
 
@@ -15,6 +16,11 @@ builder.Services.AddSignalR()
             NamingStrategy = new SnakeCaseNamingStrategy()
         };
     });
+
+var hub = (IHubContext<NotificationHub>)builder.Services
+    .BuildServiceProvider()
+    .GetService(typeof(IHubContext<NotificationHub>));
+NotificationHubManager.Init(hub);
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
