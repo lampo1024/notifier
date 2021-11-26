@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
 using Newtonsoft.Json;
+
 using Notifier.Server.Models;
 
 namespace Notifier.Server.Hubs
@@ -8,8 +9,10 @@ namespace Notifier.Server.Hubs
     public class NotificationHub : Hub
     {
         private readonly Group _group = new Group();
-        public async Task SendMessage(MessageRequestModel model)
+        public async Task SendMessage(ChatMessageModel model)
         {
+            model.From = Context.ConnectionId;
+            //await NotificationHubManager.SendMessage(model);
             model.SetTargetToMe();
             Console.WriteLine($"接收到消息：{JsonConvert.SerializeObject(model)}");
             switch (model.Group)
