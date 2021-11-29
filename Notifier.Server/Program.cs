@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
@@ -11,6 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 //{
 //    options.LowercaseUrls = true;
 //});
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(c =>
+    {
+        c.LoginPath = "/account/login";
+    });
 builder.Services.AddControllers(options =>
 {
     options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
@@ -21,7 +27,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR()
     .AddNewtonsoftJsonProtocol(options =>
     {
-        // options.PayloadSerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         options.PayloadSerializerSettings.ContractResolver = new DefaultContractResolver
         {
             NamingStrategy = new SnakeCaseNamingStrategy()
