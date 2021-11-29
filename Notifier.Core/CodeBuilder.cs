@@ -3,15 +3,15 @@
 namespace Notifier.Core
 {
     /// <summary>
-    /// 随机字符生成器
+    /// code builder
     /// </summary>
-    public class RandomBuilder
+    public class CodeBuilder
     {
         /// <summary>
-        /// 生成用户ID
+        /// generate user code
         /// </summary>
         /// <returns></returns>
-        public static string CreateUserId()
+        public static string CreateUserCode()
         {
             return RandomExtension.GetRandomizer(8, true, false, true, true);
         }

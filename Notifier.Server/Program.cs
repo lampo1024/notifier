@@ -1,9 +1,20 @@
-using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
+using Notifier.Server.DataAccess;
+using Notifier.Server.Extensions;
 using Notifier.Server.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers()
+
+//builder.Services.AddRouting(options =>
+//{
+//    options.LowercaseUrls = true;
+//});
+builder.Services.AddControllers(options =>
+{
+    options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
+})
     .AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,10 +28,11 @@ builder.Services.AddSignalR()
         };
     });
 
-var hub = (IHubContext<NotificationHub>)builder.Services
-    .BuildServiceProvider()
-    .GetService(typeof(IHubContext<NotificationHub>));
-NotificationHubManager.Init(hub);
+builder.Services.AddDbContext<NtfDbContext>(options =>
+{
+    options.UseMySql(builder.Configuration.GetConnectionString("MySQL"), MySqlServerVersion.LatestSupportedServerVersion);
+});
+
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {

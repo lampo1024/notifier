@@ -24,8 +24,8 @@ namespace Notifier.Server.Controllers
             {
                 Data = data
             };
-            // await _hubContext.Clients.All.SendAsync("receiveMessage", model);
-            await NotificationHubManager.SendMessage(model);
+            await _hubContext.Clients.All.SendAsync("receiveMessage", model);
+            //await NotificationHubManager.SendMessage(model);
             return Ok(new { success = true, message = "消息接收成功" });
         }
 
